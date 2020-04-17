@@ -225,7 +225,7 @@ return [
         ],
         [
             'text' => 'Subscribe',
-            'url' => '',
+            'url' => 'admin/subscribe/',
             'icon' => 'far fa-check-circle',
         ],
         [

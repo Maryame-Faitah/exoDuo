@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Subscribe;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $subscribes = Subscribe::all();
+    return view('index', compact('subscribes'));
 });
+
 Route::get('/admin', function () {
     return view('admin.index');
 });
+
+Route::resource('/admin/subscribe', 'SubscribeController');
