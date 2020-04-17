@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5 pt-5">
-        <h1 class="text-center mt-5 pt-5">Création d'un Header</h1>
+        <h1 class="text-center mt-5 pt-5">Création d'une section Header</h1>
         <form action="{{route('header.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\About;
 
 class AboutController extends Controller
 {
@@ -13,7 +15,9 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $abouts = About::all();
+
+        return view('admin.about.index',compact('abouts'));
     }
 
     /**
@@ -23,7 +27,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.about.create');
     }
 
     /**
@@ -34,7 +38,19 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $about = new About();
+
+        $about->section_titre = request('titre');
+        $about->description = request('description');
+        $about->img_path = request('image')->store('image');
+        $about->sous_titre = request('titre2');
+        $about->texte = request('texte');
+
+        $about->save();
+
+        return redirect()->route('about.index');
+
+
     }
 
     /**
@@ -56,7 +72,9 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $about = About::find($id);
+
+        return view('admin.about.edit',compact('about'));
     }
 
     /**
@@ -68,7 +86,21 @@ class AboutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $about = About::find($id);
+
+        if ($about != null) {
+            Storage::delete($about->img_path);
+            $about->img_path = request('image')->store('image');
+
+            $about->section_titre = request('titre');
+            $about->description = request('description');
+            $about->sous_titre = request('titre2');
+            $about->texte = request('texte');
+        }
+
+        $about->save();
+
+        return redirect()->route('about.index');
     }
 
     /**
@@ -79,6 +111,12 @@ class AboutController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $about = About::find($id);
+
+        Storage::delete($about);
+
+        $about->delete();
+
+        return redirect()->back();
     }
 }

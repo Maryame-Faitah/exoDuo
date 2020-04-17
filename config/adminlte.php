@@ -215,7 +215,7 @@ return [
         ],
         [
             'text' => 'Section About',
-            'url' => '',
+            'url' => '/admin/about',
             'icon' => 'fas fa-address-card',
         ],
         [

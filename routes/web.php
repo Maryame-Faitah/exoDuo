@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Header;
+use App\About;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,9 @@ use App\Header;
 Route::get('/', function () {
     // afficher modif dans page principale du site:
     $headers = Header::all();
+    $abouts = About::all();
 
-    return view('index',compact('headers'));
+    return view('index',compact('headers','abouts'));
 
 })->name('index');
 
@@ -29,4 +31,7 @@ Route::get('/admin', function () {
 
 // HEADER
 Route::resource('/admin/header','HeaderController');
+
+// ABOUT
+Route::resource('/admin/about','AboutController');
 
