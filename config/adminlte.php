@@ -220,7 +220,7 @@ return [
         ],
         [
             'text' => 'Section Services',
-            'url' => '',
+            'url' => 'admin/services/',
             'icon' => 'fas fa-hands-helping',
         ],
         [

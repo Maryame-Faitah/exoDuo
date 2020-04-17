@@ -6,7 +6,7 @@
         @method('put')
         <div class="form-group">
           <label for="">Url du button Submite</label>
-          <input type="text" name="url_subscribe" id="url_subscribe" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="text" name="url_subscribe" value="{{$subscribe->url_subscribe}}" id="url_subscribe" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

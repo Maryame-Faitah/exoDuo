@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Subscribe;
+use App\Service1;
+use App\Service2;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +18,9 @@ use App\Subscribe;
 
 Route::get('/', function () {
     $subscribes = Subscribe::all();
-    return view('index', compact('subscribes'));
+    $services = Service1::all();
+    $services2 = Service2::all();
+    return view('index', compact('subscribes', 'services', 'services2'));
 });
 
 Route::get('/admin', function () {
@@ -24,3 +28,13 @@ Route::get('/admin', function () {
 });
 
 Route::resource('/admin/subscribe', 'SubscribeController');
+
+Route::get('/admin/services', function(){
+    $services = Service1::all();
+    $services2 = Service2::all();
+    return view('admin.services.index', compact('services', 'services2'));
+});
+
+Route::resource('/admin/services1', 'ServiceController');
+
+Route::resource('/admin/services2', 'Service2Controller');
