@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('content')
-    <h1 class="text-center">Creer l'url du button Subscribe</h1>
+    <h1 class="text-center">Edit</h1>
     <form action="{{route('services1.update', $service->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('content')
-    <h1 class="text-center">Creer le titre et description de la Section Services</h1>
+    <h1 class="text-center">Create</h1>
     <form action="{{route('services2.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 

@@ -6,7 +6,14 @@
           <p class="subscribe-text">Join our 1000+ subscribers and get access to the latest tools, freebies, product announcements and much more!</p>
         </div>
         <div class="col-md-4 subscribe-btn-container">
-          <a class="subscribe-btn" href="{{$subscribes[0]->url_subscribe}}">Subscribe Now</a>
+              @if(count($subscribes) !== 0)
+                @foreach ($subscribes as $subscribe)
+                  <a class="subscribe-btn" href="{{$subscribe->url_subscribe}}">Subscribe Now</a>
+                @endforeach
+              @else
+                <a class="subscribe-btn" href="#">Subscribe Now</a>
+              @endif
+
         </div>
       </div>
     </div>

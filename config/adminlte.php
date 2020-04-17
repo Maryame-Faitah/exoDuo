@@ -235,7 +235,7 @@ return [
         ],
         [
             'text' => 'Section Testimonials',
-            'url' => '',
+            'url' => 'admin/testimonials',
             'icon' => 'far fa-comments',
         ],
         [
