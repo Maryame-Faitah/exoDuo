@@ -210,7 +210,7 @@ return [
     'menu' => [
         [
             'text' => 'Section Header',
-            'url' => '',
+            'url' => '/admin/header',
             'icon' => 'fas fa-heading',
         ],
         [

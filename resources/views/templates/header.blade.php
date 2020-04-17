@@ -1,9 +1,10 @@
 <div id="preloader"></div>
-<section id="hero">
+<section id="hero" style="background:url('{{asset('storage/'.$headers[0]->img_path)}}') top center;">
     <div class="hero-container">
       <div class="wow fadeIn">
         <div class="hero-logo">
           <img class="" src="img/logo.png" alt="Imperial">
+          {{-- <img class="" src="img/logo.png" alt="Imperial"> --}}
         </div>
 
         <h1>Welcome to Imperial studios</h1>

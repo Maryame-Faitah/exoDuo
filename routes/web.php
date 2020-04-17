@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Header;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
-});
+    // afficher modif dans page principale du site:
+    $headers = Header::all();
+
+    return view('index',compact('headers'));
+
+})->name('index');
+
+// ADMIN
 Route::get('/admin', function () {
     return view('admin.index');
-});
+})->name('admin');
+
+// HEADER
+Route::resource('/admin/header','HeaderController');
+

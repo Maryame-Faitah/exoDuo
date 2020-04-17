@@ -31,17 +31,17 @@
         <!-- Bootstrap CSS File -->
 
         <!-- Libraries CSS Files -->
-        <link href="dist/animate-css/animate.min.css" rel="stylesheet">
+        <link href="{{asset('dist/animate-css/animate.min.css')}}" rel="stylesheet">
 
         <!-- Main Stylesheet File -->
-        <link href="css/app.css" rel="stylesheet"> 
+        <link href="{{asset('css/app.css')}}" rel="stylesheet"> 
     </head>
     <body>
       
       @yield('content')
 
       <!-- Template Specisifc Custom Javascript File -->
-      <script src="js/app.js"></script>
+      <script src="{{asset('js/app.js')}}"></script>
 
 
     </body>
