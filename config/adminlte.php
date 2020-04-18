@@ -240,7 +240,7 @@ return [
         ],
         [
             'text' => 'Section Team',
-            'url' => '',
+            'url' => '/admin/team',
             'icon' => 'fas fa-users',
         ],
         [

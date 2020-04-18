@@ -5,6 +5,8 @@ use App\Header;
 use App\About;
 use App\Portfolio;
 use App\Portfolio1;
+use App\Team;
+use App\Team1;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +25,10 @@ Route::get('/', function () {
     $abouts = About::all();
     $portfolios = Portfolio::all();
     $portfolios1 = Portfolio1::all();
+    $teams = Team::all();
+    $teams1 = Team1::all();
 
-    return view('index',compact('headers','abouts','portfolios','portfolios1'));
+    return view('index',compact('headers','abouts','portfolios','portfolios1','teams','teams1'));
 
 })->name('index');
 
@@ -44,4 +48,7 @@ Route::resource('/admin/portfolio','PortfolioController');
 
 Route::resource('/admin/portfolio1','Portfolio1Controller');
 
+// TEAM
+Route::resource('/admin/team','TeamController');
 
+Route::resource('/admin/team1','Team1Controller');
