@@ -4,7 +4,6 @@
       <div class="wow fadeIn">
         <div class="hero-logo">
           <img class="" src="img/logo.png" alt="Imperial">
-          {{-- <img class="" src="img/logo.png" alt="Imperial"> --}}
         </div>
 
         <h1>Welcome to Imperial studios</h1>

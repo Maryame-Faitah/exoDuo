@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Portfolio;
 use App\Portfolio1;
+use App\Portfolio;
 
-
-class PortfolioController extends Controller
+class Portfolio1Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,7 +28,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('admin.portfolio.create');
+        return view('admin.portfolio.portfolio1.create');
     }
 
     /**
@@ -40,13 +39,12 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        $portfolio = new Portfolio();
+        $portfolio1 = new Portfolio1();
 
-        $portfolio->img_titre = request('img_titre');
-        $portfolio->img_description = request('img_description');
-        $portfolio->img_path = request('img_path')->store('img_path');
+        $portfolio1->section_titre = request('section_titre');
+        $portfolio1->description = request('description');
 
-        $portfolio->save();
+        $portfolio1->save();
 
         return redirect()->route('portfolio.index');
     }
@@ -70,9 +68,9 @@ class PortfolioController extends Controller
      */
     public function edit($id)
     {
-        $portfolio = Portfolio::find($id);
+        $portfolio1 = Portfolio1::find($id);
 
-        return view('admin.portfolio.edit',compact('portfolio'));
+        return view('admin.portfolio.portfolio1.edit',compact('portfolio1'));
     }
 
     /**
@@ -84,17 +82,12 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $portfolio = Portfolio::find($id);
+        $portfolio1 = Portfolio1::find($id);
 
-        if ($portfolio != null) {
-            Storage::delete($portfolio->img_path);
-            $portfolio->img_path = request('img_path')->store('img_path');
+        $portfolio1->section_titre = request('section_titre');
+        $portfolio1->description = request('description');
 
-            $portfolio->img_titre = request('img_titre');
-            $portfolio->img_description = request('img_description');
-        }
-
-        $portfolio->save();
+        $portfolio1->save();
 
         return redirect()->route('portfolio.index');
     }
@@ -107,11 +100,11 @@ class PortfolioController extends Controller
      */
     public function destroy($id)
     {
-        $portfolio = Portfolio::find($id);
+        $portfolio1 = Portfolio1::find($id);
 
-        Storage::delete($portfolio);
+        Storage::delete($portfolio1);
 
-        $portfolio->delete();
+        $portfolio1->delete();
 
         return redirect()->back();
     }

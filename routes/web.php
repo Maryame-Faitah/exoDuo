@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Header;
 use App\About;
+use App\Portfolio;
+use App\Portfolio1;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +21,10 @@ Route::get('/', function () {
     // afficher modif dans page principale du site:
     $headers = Header::all();
     $abouts = About::all();
+    $portfolios = Portfolio::all();
+    $portfolios1 = Portfolio1::all();
 
-    return view('index',compact('headers','abouts'));
+    return view('index',compact('headers','abouts','portfolios','portfolios1'));
 
 })->name('index');
 
@@ -34,4 +38,10 @@ Route::resource('/admin/header','HeaderController');
 
 // ABOUT
 Route::resource('/admin/about','AboutController');
+
+// PORTFOLIOS
+Route::resource('/admin/portfolio','PortfolioController');
+
+Route::resource('/admin/portfolio1','Portfolio1Controller');
+
 

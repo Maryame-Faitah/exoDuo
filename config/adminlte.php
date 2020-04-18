@@ -230,7 +230,7 @@ return [
         ],
         [
             'text' => 'Section Portfolio',
-            'url' => '',
+            'url' => '/admin/portfolio',
             'icon' => 'fas fa-briefcase',
         ],
         [
