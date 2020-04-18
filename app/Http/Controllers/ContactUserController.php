@@ -58,7 +58,7 @@ class ContactUserController extends Controller
         $contactUser->subject = request('subject');
         $contactUser->message = request('message');
         $contactUser->save();
-        return redirect()->route('contactUser.index');
+        return redirect()->back();
     }
 
     /**

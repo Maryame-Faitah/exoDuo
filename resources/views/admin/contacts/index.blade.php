@@ -57,7 +57,7 @@
     </div>
 
     @if(count($contactAdmins) === 0)
-        <a href="{{route('contactSection.create')}}" class="btn btn-primary my-3 ml-2">Create</a>
+        <a href="{{route('contactAdmin.create')}}" class="btn btn-primary my-3 ml-2">Create</a>
     @endif
     <div class="col-12 mb-5 pb-5">
         <div class="card">

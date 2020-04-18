@@ -55,7 +55,7 @@
           {{-- Adress --}}
         <div class="form-group">
             <label for="">Adress de l'Admin</label>
-            <input type="text" name="adress" id="adress" class="form-control" placeholder="" aria-describedby="helpId">
+            <input type="text" name="adress" value="{{$contactAdmin->adress}}" id="adress" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
         {{-- Icon Email --}}
@@ -119,7 +119,7 @@
           {{-- Email --}}
         <div class="form-group">
             <label for="">Email de l'Admin</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+            <input type="email" name="email" value="{{$contactAdmin->email}}" id="email" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
         {{-- Icon Phone --}}
@@ -174,7 +174,7 @@
            {{-- Phone --}}
         <div class="form-group">
             <label for="">Phone</label>
-            <input type="tel" name="phone" id="phone" class="form-control" placeholder="" aria-describedby="helpId">
+            <input type="tel" name="phone" value="{{$contactAdmin->phone}}" id="phone" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

@@ -30,7 +30,7 @@ Route::get('/', function () {
     $contactAdmins = ContactAdmin::all();
     $contactSections = ContactSection::all();
     return view('index', compact('subscribes', 'services', 'services2', 'testimonials', 'testimonials2', 'contactAdmins', 'contactSections'));
-});
+})->name('index');
 
 Route::get('/admin', function () {
     $services2 = Service2::all();

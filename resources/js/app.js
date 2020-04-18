@@ -10,4 +10,4 @@ global.sticky = require('./sticky');
 require('jquery.easing');
 
 require('./custom');
-require('./contactform')
+// require('./contactform')
