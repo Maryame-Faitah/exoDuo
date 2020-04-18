@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-    <div class="container mt-5 pt-5">
+    <div class="container">
         <h1 class="text-center">Création d'un nouveau portfolio</h1>
         <form action="{{route('portfolio.store')}}" method="POST" enctype="multipart/form-data">
             @csrf

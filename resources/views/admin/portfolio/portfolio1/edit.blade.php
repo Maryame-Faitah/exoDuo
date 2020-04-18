@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-    <div class="container mt-5 pt-5">
+    <div class="container">
         <h1 class="text-center">Modification du portfolio</h1>
         <form action="{{route('portfolio1.update',$portfolio1->id)}}" method="POST" enctype="multipart/form-data">
             @csrf

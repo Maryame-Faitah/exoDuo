@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-    <div class="container mt-5 pt-5">
+    <div class="container">
         <h1 class="text-center">Création d'une section team</h1>
         <form action="{{route('team1.store')}}" method="POST" enctype="multipart/form-data">
             @csrf

@@ -12,6 +12,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Image</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>

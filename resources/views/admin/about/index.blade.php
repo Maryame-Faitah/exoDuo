@@ -27,7 +27,7 @@
                             <tr>
                                 <td>{{$about->section_titre}}</td>
                                 <td>{{$about->description}}</td>
-                                <td><img src="{{asset('storage/'.$about->img_path)}}" alt=""></td>
+                                <td><img src="{{asset('storage/'.$about->img_path)}}" alt="" class="w-75"></td>
                                 <td>{{$about->sous_titre}}</td>
                                 <td>{{$about->texte}}</td>
                                 <td class="d-flex">
