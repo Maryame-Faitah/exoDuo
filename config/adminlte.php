@@ -245,7 +245,7 @@ return [
         ],
         [
             'text' => 'Section Contact',
-            'url' => '',
+            'url' => 'admin/contacts',
             'icon' => 'fas fa-address-book',
         ],
     ],
