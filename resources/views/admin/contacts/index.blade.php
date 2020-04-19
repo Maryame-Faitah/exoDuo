@@ -3,7 +3,7 @@
 <div class="container">
     <h1 class="text-center">Section Contact Us</h1>
     @if(count($contactSections) === 0)
-        <a href="{{route('contactSection.create')}}" class="btn btn-primary my-3 ml-2">Create</a>
+        <a href="{{route('contactSection.create')}}" class="btn btn-primary my-3 ml-2">Créer</a>
     @endif
 
     <div class="col-12 mb-5 pb-5">
@@ -35,14 +35,14 @@
                 @foreach ($contactSections as $contactSection)
                     <tr>
                       <td>{{$contactSection->id}}</td>
-                      <td>{{$contactSection->title}}</td>
-                      <td>{{$contactSection->description}}</td>
+                      <td>{{maxStr($contactSection->title, 15)}}</td>
+                      <td>{{maxStr($contactSection->description, 20)}}</td>
                       <td>
                           <form action="{{route('contactSection.destroy', $contactSection->id)}}" method="POST" enctype="multipart/form-data">
                                   @csrf
                                   @method('delete')
-                                  <a href="{{route('contactSection.edit', $contactSection->id)}}" class="btn btn-primary">Edit</a>
-                                  <button type="submit" class="btn btn-danger">Delete</button>
+                                  <a href="{{route('contactSection.edit', $contactSection->id)}}" class="btn btn-primary">Modifier</a>
+                                  <button type="submit" class="btn btn-danger">Supprimer</button>
                           </form>
                       </td>
                   </tr>
@@ -57,7 +57,7 @@
     </div>
 
     @if(count($contactAdmins) === 0)
-        <a href="{{route('contactAdmin.create')}}" class="btn btn-primary my-3 ml-2">Create</a>
+        <a href="{{route('contactAdmin.create')}}" class="btn btn-primary my-3 ml-2">Créer</a>
     @endif
     <div class="col-12 mb-5 pb-5">
         <div class="card">
@@ -80,35 +80,44 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Icon Adress</th>
-                  <th>Adress</th>
-                  <th>Icon Email</th>
-                  <th>Email</th>
-                  <th>Icon Phone</th>
-                  <th>Phone</th>
+                  <th class="text-center">Icon/Address</th>
+                  <th class="text-center">Icon/Email</th>
+                  <th class="text-center">Icon/Phone</th>
                 </tr>
               </thead>
               <tbody>
                   @foreach ($contactAdmins as $contactAdmin)
                       <tr>
                         <td>{{$contactAdmin->id}}</td>
-                        <td class="text-center"><i class="{{$contactAdmin->iconAdress}}"></i></td>
-                        <td>{{$contactAdmin->adress}}</td>
-                        <td class="text-center"><i class="{{$contactAdmin->iconEmail}}"></i></td>
-                        <td>{{$contactAdmin->email}}</td>
-                        <td class="text-center"><i class="{{$contactAdmin->iconPhone}}"></i></td>
-                        <td>{{$contactAdmin->phone}}</td>
+
+                        <td>
+                          <div class="d-flex flex-column align-items-center">
+                            <i class="{{$contactAdmin->iconAdress}} mb-1"></i>
+                            {{maxStr($contactAdmin->adress, 20)}}
+                          </div>
+                        </td>
+                        <td>
+                          <div class="d-flex flex-column align-items-center">
+                            <i class="{{$contactAdmin->iconEmail}} mb-1"></i>
+                            {{maxStr($contactAdmin->email, 20)}}
+                          </div>
+                        </td>
+                        <td>
+                          <div class="d-flex flex-column align-items-center">
+                            <i class="{{$contactAdmin->iconPhone}} mb-1"></i>
+                            {{maxStr($contactAdmin->phone, 10)}}
+                        </td>
                         <td>
                             <form action="{{route('contactAdmin.destroy', $contactAdmin->id)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('delete')
-                                    <a href="{{route('contactAdmin.edit', $contactAdmin->id)}}" class="btn btn-primary">Edit</a>
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <a href="{{route('contactAdmin.edit', $contactAdmin->id)}}" class="btn btn-primary">Modifier</a>
+                                    <button type="submit" class="btn btn-danger">Supprimer</button>
                             </form>
                         </td>
                     </tr>
                   @endforeach
-                
+        
               </tbody>
             </table>
           </div>
@@ -175,8 +184,8 @@
                         </div>
                       </td>
                       <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                      <td class="mailbox-name"><a href="{{route('contactUser.show', $contactUser->id)}}">{{$contactUser->name}}</a></td>
-                      <td class="mailbox-subject"><b>{{$contactUser->subject}}</b> - {{$contactUser->message}}
+                      <td class="mailbox-name"><a href="{{route('contactUser.show', $contactUser->id)}}">{{maxStr($contactUser->name, 10)}}</a></td>
+                      <td class="mailbox-subject"><b>{{$contactUser->subject}}</b> - {{maxStr($contactUser->message, 25)}}
                       </td>
                       <td class="mailbox-attachment"></td>
                       <td class="mailbox-date">5 mins ago</td>

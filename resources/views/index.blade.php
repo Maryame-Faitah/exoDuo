@@ -1,6 +1,7 @@
 @extends('layout.app')
 
 @section('content')
+
     @include('templates.header')
     @include('templates.about')
     @include('templates.services')

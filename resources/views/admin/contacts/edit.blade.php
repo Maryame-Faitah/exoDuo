@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('content')
-    <h1 class="text-center">Edit</h1>
+    <h1 class="text-center">Modifier</h1>
     <form action="{{route('contactAdmin.update', $contactAdmin->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')
@@ -126,7 +126,6 @@
         <div class="col-sm-6">
             <label for="">Icon Phone</label>
             <!-- radio -->
-            <input type="radio">
             <div class="form-group">
               <div class="custom-control custom-radio">
                 @if ($contactAdmin->iconPhone === "fas fa-phone")
@@ -177,6 +176,6 @@
             <input type="tel" name="phone" value="{{$contactAdmin->phone}}" id="phone" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
 @endsection

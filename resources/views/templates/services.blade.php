@@ -28,22 +28,22 @@
             
           @else
             <div class="col-md-4 service-item">
-              <div class="service-icon"><i class="fa fa-desktop"></i></div>
+              <div class="service-icon"><i class="fas fa-desktop"></i></div>
               <h4 class="service-title"><a href="">Lorem Ipsum</a></h4>
               <p class="service-description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
             <div class="col-md-4 service-item">
-              <div class="service-icon"><i class="fa fa-bar-chart"></i></div>
+              <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
               <h4 class="service-title"><a href="">Dolor Sitema</a></h4>
               <p class="service-description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
             </div>
             <div class="col-md-4 service-item">
-              <div class="service-icon"><i class="fa fa-paper-plane"></i></div>
+              <div class="service-icon"><i class="fas fa-paper-plane"></i></div>
               <h4 class="service-title"><a href="">Sed ut perspiciatis</a></h4>
               <p class="service-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
             </div>
             <div class="col-md-4 service-item">
-              <div class="service-icon"><i class="fa fa-photo"></i></div>
+              <div class="service-icon"><i class="far fa-image"></i></div>
               <h4 class="service-title"><a href="">Magni Dolores</a></h4>
               <p class="service-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>

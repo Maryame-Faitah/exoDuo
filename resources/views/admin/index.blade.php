@@ -18,17 +18,25 @@
               <li class="nav-item active">
                 <a href="{{route('contactAdmin.index')}}" class="nav-link">
                   <i class="fas fa-inbox"></i> Inbox
-                  <span class="badge bg-primary float-right">{{count($contactUsers)}}</span>
+                  @if (count($contactUsers) !== 0)
+                    <span class="badge bg-primary float-right">{{nbPosts($contactUsers)}}</span>
+                  @endif
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('testimonials2.index')}}" class="nav-link">
-                  <i class="far fa-comments"></i> Testimonials <span class="badge bg-info float-right">{{count($testimonials2)}}</span>
+                  <i class="far fa-comments"></i> Testimonials
+                  @if (count($testimonials2) !== 0)
+                    <span class="badge bg-info float-right">{{nbPosts($testimonials2)}}</span>
+                  @endif
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('services2.index')}}" class="nav-link">
-                  <i class="fas fa-hands-helping"></i> Services <span class="badge bg-success float-right">{{count($services2)}}</span>
+                  <i class="fas fa-hands-helping"></i> Services
+                  @if (count($services2) !== 0)
+                    <span class="badge bg-success float-right">{{nbPosts($services2)}}</span>
+                  @endif
                 </a>
               </li>
             </ul>

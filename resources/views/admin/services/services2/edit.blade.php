@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('content')
-    <h1 class="text-center">Edit</h1>
+    <h1 class="text-center">Modifier</h1>
     <form action="{{route('services2.update', $service2->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')
@@ -55,12 +55,12 @@
             </div>
 
             <div class="custom-control custom-radio">
-              @if ($service2->service_icon === "fas fa-briefcase")
-                <input class="custom-control-input" type="radio" id="customRadio6" name="service_icon" value="fas fa-briefcase" checked>
+              @if ($service2->service_icon === "fa fa-shopping-bag")
+                <input class="custom-control-input" type="radio" id="customRadio6" name="service_icon" value="fa fa-shopping-bag" checked>
               @else
-                <input class="custom-control-input" type="radio" id="customRadio6" name="service_icon" value="fas fa-briefcase">
+                <input class="custom-control-input" type="radio" id="customRadio6" name="service_icon" value="fa fa-shopping-bag">
               @endif
-              <label for="customRadio6" class="custom-control-label"><i class="fas fa-briefcase"></i></label>
+              <label for="customRadio6" class="custom-control-label"><i class="fa fa-shopping-bag"></i></label>
             </div>
           </div>
         </div>
@@ -75,6 +75,6 @@
             <input type="text" name="service_description" value="{{$service2->service_description}}" id="service_description" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
 @endsection

@@ -37,7 +37,7 @@
             <div class="row w-100">
               <div class="col-md-9">
                 <div class="quote">
-                  <b><img src="{{asset('img/quote_sign_left.png')}}" alt=""></b> {{$testimonial2->desription}} <small><img src="img/quote_sign_right.png" alt=""></small>
+                  <b><img src="{{asset('img/quote_sign_left.png')}}" alt=""></b> {{$testimonial2->description}} <small><img src="img/quote_sign_right.png" alt=""></small>
                 </div>
               </div>
               <div class="col-md-3">

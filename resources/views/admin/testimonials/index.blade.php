@@ -3,7 +3,7 @@
 <div class="container">
     <h1 class="text-center">Section Testimonials</h1>
     @if(count($testimonials) === 0)
-        <a href="{{route('testimonials1.create')}}" class="btn btn-primary">Create</a>
+        <a href="{{route('testimonials1.create')}}" class="btn btn-primary">Créer</a>
     @endif
     <div class="col-12">
         <div class="card">
@@ -34,14 +34,15 @@
                 @foreach ($testimonials as $testimonial)
                   <tr>
                       <td>{{$testimonial->id}}</td>
-                      <td>{{$testimonial->section_title}}</td>
-                      <td>{{$testimonial->section_description}}</td>
+                      <td>{{maxStr($testimonial->section_title, 20)}}</td>
+                      <td>{{maxStr($testimonial->section_description, 20)}}
+                      </td>
                       <td>
                           <form action="{{route('testimonials1.destroy', $testimonial->id)}}" method="POST" enctype="multipart/form-data">
                                   @csrf
-                                  @method('delete')
-                                  <a href="{{route('testimonials1.edit', $testimonial->id)}}" class="btn btn-primary">Edit</a>
-                                  <button type="submit" class="btn btn-danger">Delete</button>
+                                  @method('Supprimer')
+                                  <a href="{{route('testimonials1.edit', $testimonial->id)}}" class="btn btn-primary">Modifier</a>
+                                  <button type="submit" class="btn btn-danger">Supprimer</button>
                           </form>
                       </td>
                   </tr>
@@ -54,7 +55,7 @@
         <!-- /.card -->
       </div>
 
-        <a href="{{route('testimonials2.create')}}" class="btn btn-primary">Create</a>
+        <a href="{{route('testimonials2.create')}}" class="btn btn-primary">Créer</a>
 
     <div class="col-12">
         <div class="card">
@@ -87,16 +88,18 @@
                   @foreach ($testimonials2 as $testimonial2)
                       <tr>
                         <td>{{$testimonial2->id}}</td>
-                        <td class="text-center"><img src="{{asset('storage/'.$testimonial2->img_path)}}" class="w-75" alt=""></td>
-                        <td>{{$testimonial2->name}}</td>
-                        <td>{{$testimonial2->job}}</td>
-                        <td>{{$testimonial2->description}}</td>
+                        <td class="text-center"><img src="{{asset('storage/'.$testimonial2->img_path)}}" class="w-100 rounded-circle" alt=""></td>
+                        <td>{{maxStr($testimonial2->name, 15)}}</td>
+                        <td>{{maxStr($testimonial2->job, 20)}}</td>
+                        <td>
+                          {{maxStr($testimonial2->description, 20)}}
+                        </td>
                         <td>
                             <form action="{{route('testimonials2.destroy', $testimonial2->id)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('delete')
-                                    <a href="{{route('testimonials2.edit', $testimonial2->id)}}" class="btn btn-primary">Edit</a>
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <a href="{{route('testimonials2.edit', $testimonial2->id)}}" class="btn btn-primary">Modifier</a>
+                                    <button type="submit" class="btn btn-danger">Supprimer</button>
                             </form>
                         </td>
                     </tr>

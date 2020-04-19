@@ -18,9 +18,13 @@
             <div class="card-body p-0">
               <ul class="nav nav-pills flex-column">
                 <li class="nav-item active">
-                  <a href="{{route('contactAdmin.index')}}" class="nav-link">
+                  <a href="{{route('contactAdmin.index')}}" class="nav-link"> 
                     <i class="fas fa-inbox"></i> Inbox
-                    <span class="badge bg-primary float-right">{{count($contactUsers)}}</span>
+                    @if (count($contactUsers) !== 0)
+                      <span class="badge bg-primary float-right">{{count($contactUsers)}}</span>
+                    @endif
+                   
+                    
                   </a>
                 </li>
                 <li class="nav-item">

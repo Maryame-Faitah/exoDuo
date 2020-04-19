@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('content')
-    <h1 class="text-center">Create</h1>
+    <h1 class="text-center">Créer</h1>
     <form action="{{route('contactAdmin.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
@@ -80,7 +80,6 @@
         <div class="col-sm-6">
             <label for="">Icon Phone</label>
             <!-- radio -->
-            <input type="radio">
             <div class="form-group">
               <div class="custom-control custom-radio">
                 <input class="custom-control-input" type="radio" id="phone1" name="iconPhone" value="fas fa-phone">
@@ -111,6 +110,6 @@
             <input type="tel" name="phone" id="phone" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
 @endsection

@@ -3,7 +3,7 @@
 <div class="container">
     <h1 class="text-center">Section Subscribe</h1>
     @if(count($subscribes) === 0)
-        <a href="{{route('subscribe.create')}}" class="btn btn-primary">Create</a>
+        <a href="{{route('subscribe.create')}}" class="btn btn-primary">Créer</a>
     @endif
     <div class="col-12">
         <div class="card">
@@ -33,13 +33,13 @@
                   @foreach ($subscribes as $subscribe)
                       <tr>
                         <td>{{$subscribe->id}}</td>
-                        <td>{{$subscribe->url_subscribe}}</td>
+                        <td>{{maxStr($subscribe->url_subscribe, 25)}}</td>
                         <td>
                             <form action="{{route('subscribe.destroy', $subscribe->id)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('delete')
-                                    <a href="{{route('subscribe.edit', $subscribe->id)}}" class="btn btn-primary">Edit</a>
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <a href="{{route('subscribe.edit', $subscribe->id)}}" class="btn btn-primary">Modifier</a>
+                                    <button type="submit" class="btn btn-danger">Supprimer</button>
                             </form>
                         </td>
                     </tr>

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('content')
-    <h1 class="text-center">Create</h1>
+    <h1 class="text-center">Créer</h1>
     <form action="{{route('services2.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
@@ -33,8 +33,8 @@
               </div>
               
               <div class="custom-control custom-radio">
-                <input class="custom-control-input" type="radio" id="customRadio6" name="service_icon" value="fas fa-briefcase">
-                <label for="customRadio6" class="custom-control-label"><i class="fas fa-briefcase"></i></label>
+                <input class="custom-control-input" type="radio" id="customRadio6" name="service_icon" value="fa fa-shopping-bag">
+                <label for="customRadio6" class="custom-control-label"><i class="fa fa-shopping-bag"></i></label>
               </div>
             </div>
           </div>
@@ -50,6 +50,6 @@
             <input type="text" name="service_description" id="service_description" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
 @endsection

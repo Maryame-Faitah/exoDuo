@@ -1,13 +1,15 @@
 @extends('adminlte::page')
 @section('content')
-    <h1 class="text-center">Edit</h1>
+    <h1 class="text-center">Modifier</h1>
     <form action="{{route('testimonials2.update', $testimonial2->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')
         <div class="form-group d-flex flex-column">
-          <label for="">Image</label>
-          <img src="{{asset('storage/'.$testimonial2->img_path)}}" class="w-25 my-2" alt="">
-          <input type="file" name="image" value="{{$testimonial2->img_path}}" id="image" class="form-control" placeholder="" aria-describedby="helpId">
+            <label for="">Image</label>
+            <div class="col-md-4">
+                <img src="{{asset('storage/'.$testimonial2->img_path)}}" class="w-50 my-2 rounded-circle" alt="">
+            </div>
+            <input type="file" name="image" value="{{$testimonial2->img_path}}" id="image" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
         <div class="form-group">
@@ -25,6 +27,6 @@
             <input type="text" name="description" value="{{$testimonial2->description}}" id="description" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
 @endsection

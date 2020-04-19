@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('content')
-    <h1 class="text-center">Edit</h1>
+    <h1 class="text-center">Modifier</h1>
     <form action="{{route('services1.update', $service->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')
@@ -14,6 +14,6 @@
             <input type="text" name="section_description" value="{{$service->section_description}}" id="section_description" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
 @endsection
