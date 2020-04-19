@@ -6,15 +6,15 @@
         @if (count($teams1) === 0)
             <a href="{{route('team1.create')}}" class="btn btn-primary mb-2">Créer</a>
         @endif
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-12">
             <div class="card">
                 <div class="card-body table-responsive p-0" style="height: 300px;">
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
                     <tr>
-                        <th>Titre de la section</th>
-                        <th>Description de la section</th>
+                        <th>Titre</th>
+                        <th>Description</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -24,7 +24,7 @@
                                 <td>{{$team1->section_titre}}</td>
                                 <td>{{$team1->description}}</td>
                                 <td class="d-flex">
-                                    <a href="{{route('team1.edit',$team1->id)}}" class="btn btn-success">Modifier</a>
+                                    <a href="{{route('team1.edit',$team1->id)}}" class="btn btn-primary">Modifier</a>
                                     <form action="{{route('team1.destroy',$team1->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
@@ -49,8 +49,8 @@
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
                     <tr>
-                        <th>Nom du membre</th>
-                        <th>Description</th>
+                        <th>Nom</th>
+                        <th>Fonction</th>
                         <th>Photo</th>
                         <th>Url</th>
                         <th></th>
@@ -69,7 +69,7 @@
                                 </td>
                                 
                                 <td class="d-flex">
-                                    <a href="{{route('team.edit',$team->id)}}" class="btn btn-success">Modifier</a>
+                                    <a href="{{route('team.edit',$team->id)}}" class="btn btn-primary">Modifier</a>
                                     <form action="{{route('team.destroy',$team->id)}}" method="POST">
                                         @csrf
                                         @method('delete')

@@ -6,15 +6,15 @@
         @if (count($portfolios1) === 0)
             <a href="{{route('portfolio1.create')}}" class="btn btn-primary mb-2">Créer</a>
         @endif
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-12">
             <div class="card">
                 <div class="card-body table-responsive p-0" style="height: 300px;">
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
                     <tr>
-                        <th>Titre de la section</th>
-                        <th>Description de la section</th>
+                        <th>Titre</th>
+                        <th>Description</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -24,7 +24,7 @@
                                 <td>{{$portfolio1->section_titre}}</td>
                                 <td>{{$portfolio1->description}}</td>
                                 <td class="d-flex">
-                                    <a href="{{route('portfolio1.edit',$portfolio1->id)}}" class="btn btn-success">Modifier</a>
+                                    <a href="{{route('portfolio1.edit',$portfolio1->id)}}" class="btn btn-primary">Modifier</a>
                                     <form action="{{route('portfolio1.destroy',$portfolio1->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
@@ -47,9 +47,10 @@
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
                     <tr>
-                        <th>Nom du portfolio</th>
+                        <th>Titre</th>
                         <th>Description</th>
-                        <th>Portfolio</th>
+                        <th>Image</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -59,7 +60,7 @@
                                 <td>{{$portfolio->img_description}}</td>
                                 <td><img src="{{asset('storage/'.$portfolio->img_path)}}" class="w-50" alt=""></td>
                                 <td class="d-flex">
-                                    <a href="{{route('portfolio.edit',$portfolio->id)}}" class="btn btn-success">Modifier</a>
+                                    <a href="{{route('portfolio.edit',$portfolio->id)}}" class="btn btn-primary">Modifier</a>
                                     <form action="{{route('portfolio.destroy',$portfolio->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
