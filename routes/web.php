@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
+
 use App\Subscribe;
 use App\Service1;
 use App\Service2;
@@ -10,14 +10,13 @@ use App\Testimonial2;
 use App\ContactAdmin;
 use App\ContactUser;
 use App\ContactSection;
-=======
 use App\Header;
 use App\About;
 use App\Portfolio;
 use App\Portfolio1;
 use App\Team;
 use App\Team1;
->>>>>>> 0c89518e7b0da624dea8612b2d2a0f76b2a28ce1
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +30,6 @@ use App\Team1;
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
     $subscribes = Subscribe::all();
     $services = Service1::all();
     $services2 = Service2::all();
@@ -39,7 +37,14 @@ Route::get('/', function () {
     $testimonials2 = Testimonial2::all();
     $contactAdmins = ContactAdmin::all();
     $contactSections = ContactSection::all();
-    return view('index', compact('subscribes', 'services', 'services2', 'testimonials', 'testimonials2', 'contactAdmins', 'contactSections'));
+    $headers = Header::all();
+    $abouts = About::all();
+    $portfolios = Portfolio::all();
+    $portfolios1 = Portfolio1::all();
+    $teams = Team::all();
+    $teams1 = Team1::all();
+
+    return view('index', compact('subscribes', 'services', 'services2', 'testimonials', 'testimonials2', 'contactAdmins', 'contactSections', 'headers','abouts','portfolios','portfolios1','teams','teams1'));
 })->name('index');
 
 Route::get('/admin', function () {
@@ -83,23 +88,9 @@ Route::resource('/admin/contactAdmin', 'ContactAdminController');
 Route::resource('/admin/contactUser', 'ContactUserController');
 
 Route::resource('/admin/contactSection', 'ContactSectionController');
-=======
-    // afficher modif dans page principale du site:
-    $headers = Header::all();
-    $abouts = About::all();
-    $portfolios = Portfolio::all();
-    $portfolios1 = Portfolio1::all();
-    $teams = Team::all();
-    $teams1 = Team1::all();
-
-    return view('index',compact('headers','abouts','portfolios','portfolios1','teams','teams1'));
-
-})->name('index');
 
 // ADMIN
-Route::get('/admin', function () {
-    return view('admin.index');
-})->name('admin');
+
 
 // HEADER
 Route::resource('/admin/header','HeaderController');
@@ -116,4 +107,4 @@ Route::resource('/admin/portfolio1','Portfolio1Controller');
 Route::resource('/admin/team','TeamController');
 
 Route::resource('/admin/team1','Team1Controller');
->>>>>>> 0c89518e7b0da624dea8612b2d2a0f76b2a28ce1
+
