@@ -7,7 +7,7 @@
             <a href="{{route('about.create')}}" class="btn btn-primary mb-2">Créer</a>
         @endif
 
-        <div class="row mt-5">
+        <div class="row my-5">
             <div class="col-12">
             <div class="card">
                 <div class="card-body table-responsive p-0" style="height: 300px;">
@@ -25,11 +25,11 @@
                     <tbody>
                         @foreach ($abouts as $about)
                             <tr>
-                                <td>{{$about->section_titre}}</td>
-                                <td>{{$about->description}}</td>
+                                <td>{{maxStr($about->section_titre, 15)}}</td>
+                                <td>{{maxStr($about->description, 20)}}</td>
                                 <td><img src="{{asset('storage/'.$about->img_path)}}" alt="" class="w-75"></td>
-                                <td>{{$about->sous_titre}}</td>
-                                <td>{{$about->texte}}</td>
+                                <td>{{maxStr($about->sous_titre, 15)}}</td>
+                                <td>{{maxStr($about->texte, 20)}}</td>
                                 <td class="d-flex">
                                     <a href="{{route('about.edit',$about->id)}}" class="btn btn-primary">Modifier</a>
                                     <form action="{{route('about.destroy',$about->id)}}" method="POST">

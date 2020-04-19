@@ -3,9 +3,9 @@
 <div class="container">
     <h1 class="text-center">Section Testimonials</h1>
     @if(count($testimonials) === 0)
-        <a href="{{route('testimonials1.create')}}" class="btn btn-primary">Créer</a>
+        <a href="{{route('testimonials1.create')}}" class="btn btn-primary ml-2 mb-3">Créer</a>
     @endif
-    <div class="col-12">
+    <div class="col-12 mb-5 pb-5">
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">Responsive Hover Table</h3>
@@ -55,7 +55,7 @@
         <!-- /.card -->
       </div>
 
-        <a href="{{route('testimonials2.create')}}" class="btn btn-primary">Créer</a>
+        <a href="{{route('testimonials2.create')}}" class="btn btn-primary ml-2 mb-3">Créer</a>
 
     <div class="col-12">
         <div class="card">

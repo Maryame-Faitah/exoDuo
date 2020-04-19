@@ -88,15 +88,14 @@ class AboutController extends Controller
     {
         $about = About::find($id);
 
-        if ($about != null) {
+        if (request('image') != null) {
             Storage::delete($about->img_path);
             $about->img_path = request('image')->store('image');
-
-            $about->section_titre = request('titre');
-            $about->description = request('description');
-            $about->sous_titre = request('titre2');
-            $about->texte = request('texte');
         }
+        $about->description = request('description');
+        $about->section_titre = request('titre');
+        $about->texte = request('texte');
+        $about->sous_titre = request('titre2');
 
         $about->save();
 

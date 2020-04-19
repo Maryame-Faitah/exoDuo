@@ -11,11 +11,12 @@
                         @method('put')
                         <div class="form-group">
                             <label for="section_titre">Titre</label>
-                            <input type="text" name="section_titre" id="section_titre" class="form-control mb-2">
+                            <input type="text" name="section_titre" id="section_titre" class="form-control mb-2" value="{{$team1->section_titre}}">
                         </div>
+                        
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <input type="text" name="description" id="description" class="form-control mb-2">
+                            <input type="text" name="description" id="description" value="{{$team1->description}}" class="form-control mb-2">
                         </div>
                         <button type="submit" class="btn btn-primary mb-5">Ajouter</button>
                     </form>

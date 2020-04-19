@@ -39,6 +39,22 @@
                   @endif
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('portfolio1.index')}}" class="nav-link">
+                  <i class="fas fa-hands-helping"></i> Portfolios
+                  @if (count($portfolios) !== 0)
+                    <span class="badge bg-success float-right">{{nbPosts($portfolios)}}</span>
+                  @endif
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('team1.index')}}" class="nav-link">
+                  <i class="fas fa-hands-helping"></i> Team
+                  @if (count($teams) !== 0)
+                    <span class="badge bg-success float-right">{{nbPosts($teams)}}</span>
+                  @endif
+                </a>
+              </li>
             </ul>
           </div>
           <!-- /.card-body -->

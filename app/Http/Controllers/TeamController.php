@@ -90,17 +90,16 @@ class TeamController extends Controller
     {
         $team = Team::find($id);
 
-        if($team != null){
+        if(request('img_path') != null){
             Storage::delete($team->img_path);
             $team->img_path = request('img_path')->store('img_path');
-
-            $team->img_titre = request('img_titre');
-            $team->img_description = request('img_description');
-            $team->url1 = request('url1');
-            $team->url2 = request('url2');
-            $team->url3 = request('url3');
-            $team->url4 = request('url4');
         }
+        $team->img_description = request('img_description');
+        $team->img_titre = request('img_titre');
+        $team->url2 = request('url2');
+        $team->url1 = request('url1');
+        $team->url3 = request('url3');
+        $team->url4 = request('url4');
 
         $team->save();
 

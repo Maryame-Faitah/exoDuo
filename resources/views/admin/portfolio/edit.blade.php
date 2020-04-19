@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group">
                             <label for="img_path">Image</label>
-                            <input type="file" name="img_path" id="img_path" class="form-control mb-2">
+                            <input type="file" name="img_path" id="img_path" value="{{$portfolio->img_path}}" class="form-control mb-2">
                             <img src="{{asset('storage/'.$portfolio->img_path)}}" class="w-25" alt="">
                         </div>
                         <button type="submit" class="btn btn-primary mb-5">Ajouter</button>

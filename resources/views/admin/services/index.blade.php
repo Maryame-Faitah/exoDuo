@@ -3,9 +3,9 @@
 <div class="container">
     <h1 class="text-center">Section Services</h1>
     @if(count($services) === 0)
-        <a href="{{route('services1.create')}}" class="btn btn-primary">Créer</a>
+        <a href="{{route('services1.create')}}" class="btn btn-primary ml-2 pb-2">Créer</a>
     @endif
-    <div class="col-12">
+    <div class="col-12 mb-5 pb-5">
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">Responsive Hover Table</h3>
@@ -56,7 +56,7 @@
         <!-- /.card -->
       </div>
 
-        <a href="{{route('services2.create')}}" class="btn btn-primary">Créer</a>
+        <a href="{{route('services2.create')}}" class="btn btn-primary ml-2 pb-2">Créer</a>
 
     <div class="col-12">
         <div class="card">

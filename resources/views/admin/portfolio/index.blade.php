@@ -6,7 +6,7 @@
         @if (count($portfolios1) === 0)
             <a href="{{route('portfolio1.create')}}" class="btn btn-primary mb-2">Créer</a>
         @endif
-        <div class="row mt-5">
+        <div class="row my-5 pb-5">
             <div class="col-12">
             <div class="card">
                 <div class="card-body table-responsive p-0" style="height: 300px;">
@@ -21,8 +21,8 @@
                     <tbody>
                         @foreach ($portfolios1 as $portfolio1)
                             <tr>
-                                <td>{{$portfolio1->section_titre}}</td>
-                                <td>{{$portfolio1->description}}</td>
+                                <td>{{maxStr($portfolio1->section_titre, 20)}}</td>
+                                <td>{{maxStr($portfolio1->description, 20)}}</td>
                                 <td class="d-flex">
                                     <a href="{{route('portfolio1.edit',$portfolio1->id)}}" class="btn btn-primary">Modifier</a>
                                     <form action="{{route('portfolio1.destroy',$portfolio1->id)}}" method="POST">
@@ -56,8 +56,8 @@
                     <tbody>
                         @foreach ($portfolios as $portfolio)
                             <tr>
-                                <td>{{$portfolio->img_titre}}</td>
-                                <td>{{$portfolio->img_description}}</td>
+                                <td>{{maxStr($portfolio->img_titre, 15)}}</td>
+                                <td>{{maxStr($portfolio->img_description, 20)}}</td>
                                 <td><img src="{{asset('storage/'.$portfolio->img_path)}}" class="w-50" alt=""></td>
                                 <td class="d-flex">
                                     <a href="{{route('portfolio.edit',$portfolio->id)}}" class="btn btn-primary">Modifier</a>

@@ -3,7 +3,7 @@
 <div class="container">
     <h1 class="text-center">Section Contact Us</h1>
     @if(count($contactSections) === 0)
-        <a href="{{route('contactSection.create')}}" class="btn btn-primary my-3 ml-2">Créer</a>
+        <a href="{{route('contactSection.create')}}" class="btn btn-primary mb-2 ml-2">Créer</a>
     @endif
 
     <div class="col-12 mb-5 pb-5">
@@ -57,7 +57,7 @@
     </div>
 
     @if(count($contactAdmins) === 0)
-        <a href="{{route('contactAdmin.create')}}" class="btn btn-primary my-3 ml-2">Créer</a>
+        <a href="{{route('contactAdmin.create')}}" class="btn btn-primary mb-2 ml-2">Créer</a>
     @endif
     <div class="col-12 mb-5 pb-5">
         <div class="card">
@@ -127,7 +127,7 @@
       </div>
 
 
-      <div class="col-md-12">
+      <div class="col-md-12 mb-5">
         <h1>Emails</h1>
         <div class="card card-primary card-outline">
           <div class="card-header">

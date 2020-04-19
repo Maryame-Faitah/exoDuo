@@ -86,7 +86,7 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::find($id);
 
-        if ($portfolio != null) {
+        if (request('img_path') !== null) {
             Storage::delete($portfolio->img_path);
             $portfolio->img_path = request('img_path')->store('img_path');
 

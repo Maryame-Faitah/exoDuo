@@ -220,7 +220,7 @@ return [
         ],
         [
             'text' => 'Section Services',
-            'url' => 'admin/services/',
+            'url' => '/admin/services1',
             'icon' => 'fas fa-hands-helping',
         ],
         [
@@ -235,7 +235,7 @@ return [
         ],
         [
             'text' => 'Section Testimonials',
-            'url' => 'admin/testimonials',
+            'url' => '/admin/testimonials2',
             'icon' => 'far fa-comments',
         ],
         [
@@ -245,7 +245,7 @@ return [
         ],
         [
             'text' => 'Section Contact',
-            'url' => 'admin/contacts',
+            'url' => '/admin/contactSection',
             'icon' => 'fas fa-address-book',
         ],
     ],

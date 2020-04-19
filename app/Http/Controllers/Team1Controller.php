@@ -18,7 +18,7 @@ class Team1Controller extends Controller
     {
         $teams1 = Team1::all();
         $teams = Team::all();
-        return view('admin.team.team1.index',compact('teams','teams1'));
+        return view('admin.team.index',compact('teams','teams1'));
     }
 
     /**
@@ -46,7 +46,7 @@ class Team1Controller extends Controller
 
         $team1->save();
 
-        return redirect()->route('team.index');
+        return redirect()->route('team1.index');
     }
 
     /**
@@ -69,8 +69,9 @@ class Team1Controller extends Controller
     public function edit($id)
     {
         $team1 = Team1::find($id);
+        $teams = Team::all();
 
-        return view('admin.team.team1.edit',compact('team1'));
+        return view('admin.team.team1.edit',compact('team1', 'teams'));
     }
 
     /**
@@ -89,7 +90,7 @@ class Team1Controller extends Controller
 
         $team1->save();
 
-        return redirect()->route('team.index');
+        return redirect()->route('team1.index');
     }
 
     /**

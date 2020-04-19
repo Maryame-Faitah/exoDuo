@@ -28,7 +28,7 @@
             
           @else
             <div class="col-md-4 service-item">
-              <div class="service-icon"><i class="fas fa-desktop"></i></div>
+              <div class="service-icon"><i class="far fa-desktop"></i></div>
               <h4 class="service-title"><a href="">Lorem Ipsum</a></h4>
               <p class="service-description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>

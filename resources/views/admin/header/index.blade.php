@@ -7,7 +7,7 @@
             <a href="{{route('header.create')}}" class="btn btn-primary mb-2">Créer</a>
         @endif
 
-        <div class="row mt-5">
+        <div class="row my-5">
             <div class="col-12">
             <div class="card">
                 <div class="card-body table-responsive p-0" style="height: 300px;">
