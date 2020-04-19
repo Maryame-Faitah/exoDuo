@@ -210,12 +210,12 @@ return [
     'menu' => [
         [
             'text' => 'Section Header',
-            'url' => '',
+            'url' => '/admin/header',
             'icon' => 'fas fa-heading',
         ],
         [
             'text' => 'Section About',
-            'url' => '',
+            'url' => '/admin/about',
             'icon' => 'fas fa-address-card',
         ],
         [
@@ -230,7 +230,7 @@ return [
         ],
         [
             'text' => 'Section Portfolio',
-            'url' => '',
+            'url' => '/admin/portfolio',
             'icon' => 'fas fa-briefcase',
         ],
         [
@@ -240,7 +240,7 @@ return [
         ],
         [
             'text' => 'Section Team',
-            'url' => '',
+            'url' => '/admin/team',
             'icon' => 'fas fa-users',
         ],
         [
