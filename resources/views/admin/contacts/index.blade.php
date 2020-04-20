@@ -27,8 +27,8 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Titre de la Section</th>
-                <th>Description de la Section</th>
+                <th>Titre</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>

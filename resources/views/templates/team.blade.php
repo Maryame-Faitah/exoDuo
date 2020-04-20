@@ -25,10 +25,10 @@
               <h4>{{$team->img_titre}}</h4>
               <span>{{$team->img_description}}</span>
               <div class="social">
-                <a href=""><i class="fab fa-twitter" value="{{$team->url1}}"></i></a>
-                <a href=""><i class="fab fa-facebook" value="{{$team->url2}}"></i></a>
-                <a href=""><i class="fab fa-google-plus-g" value="{{$team->url3}}"></i></a>
-                <a href=""><i class="fab fa-linkedin-in" value="{{$team->url4}}"></i></a>
+                <a href="{{$team->url1}}"><i class="fab fa-twitter"></i></a>
+                <a href="{{$team->url2}}"><i class="fab fa-facebook"></i></a>
+                <a href="{{$team->url3}}"><i class="fab fa-google-plus-g"></i></a>
+                <a href="{{$team->url4}}"><i class="fab fa-linkedin-in"></i></a>
               </div>
             </div>
           </div>

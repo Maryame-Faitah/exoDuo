@@ -1,6 +1,6 @@
 <div id="preloader"></div>
 @if (count($headers) !== 0)
-  <section id="hero" style="background:url('{{asset('storage/'.$headers[0]->img_path)}}') top center;">
+  <section id="hero" style="background:url('{{asset('storage/'.$headers[0]->img_path)}}') top center no-repeat; background-size: cover;">
 @else
   <section id="hero" style="background:url('{{asset('img/hero-bg.jpg')}}') top center;">
 @endif
@@ -35,26 +35,9 @@
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#team">Team</a></li>
-        <li class="menu-has-children"><a href="">Drop Down</a>
-          <ul>
-            <li><a href="#">Drop Down 1</a></li>
-            <li class="menu-has-children"><a href="#">Drop Down 2</a>
-              <ul>
-                <li><a href="#">Deep Drop Down 1</a></li>
-                <li><a href="#">Deep Drop Down 2</a></li>
-                <li><a href="#">Deep Drop Down 3</a></li>
-                <li><a href="#">Deep Drop Down 4</a></li>
-                <li><a href="#">Deep Drop Down 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Drop Down 3</a></li>
-            <li><a href="#">Drop Down 4</a></li>
-            <li><a href="#">Drop Down 5</a></li>
-          </ul>
-        </li>
         <li><a href="#contact">Contact Us</a></li>
+        <li><a href="/admin">Admin</a></li>
       </ul>
     </nav>
-    <!-- #nav-menu-container -->
   </div>
 </header>

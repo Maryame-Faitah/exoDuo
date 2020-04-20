@@ -3,7 +3,7 @@
 <div class="container">
     <h1 class="text-center">Section Testimonials</h1>
     @if(count($testimonials) === 0)
-        <a href="{{route('testimonials1.create')}}" class="btn btn-primary ml-2 mb-3">Créer</a>
+        <a href="{{route('testimonials1.create')}}" class="btn btn-primary ml-2 mb-2">Créer</a>
     @endif
     <div class="col-12 mb-5 pb-5">
         <div class="card">
@@ -26,8 +26,8 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Titre de la Section</th>
-                  <th>Description de la Section</th>
+                  <th>Titre</th>
+                  <th>Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -40,7 +40,7 @@
                       <td>
                           <form action="{{route('testimonials1.destroy', $testimonial->id)}}" method="POST" enctype="multipart/form-data">
                                   @csrf
-                                  @method('Supprimer')
+                                  @method('delete')
                                   <a href="{{route('testimonials1.edit', $testimonial->id)}}" class="btn btn-primary">Modifier</a>
                                   <button type="submit" class="btn btn-danger">Supprimer</button>
                           </form>
@@ -55,13 +55,12 @@
         <!-- /.card -->
       </div>
 
-        <a href="{{route('testimonials2.create')}}" class="btn btn-primary ml-2 mb-3">Créer</a>
+        <a href="{{route('testimonials2.create')}}" class="btn btn-primary ml-2 mb-2">Créer</a>
 
     <div class="col-12">
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">Responsive Hover Table</h3>
-    
             <div class="card-tools">
               <div class="input-group input-group-sm" style="width: 150px;">
                 <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -77,18 +76,16 @@
             <table class="table table-hover text-nowrap">
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th>Image</th>
                   <th>Nom</th>
-                  <th>Job</th>
+                  <th>Fonction</th>
                   <th>Description</th>
                 </tr>
               </thead>
               <tbody>
                   @foreach ($testimonials2 as $testimonial2)
                       <tr>
-                        <td>{{$testimonial2->id}}</td>
-                        <td class="text-center"><img src="{{asset('storage/'.$testimonial2->img_path)}}" class="w-100 rounded-circle" alt=""></td>
+                        <td class="text-center"><img src="{{asset('storage/'.$testimonial2->img_path)}}" class="w-50 rounded-circle" alt=""></td>
                         <td>{{maxStr($testimonial2->name, 15)}}</td>
                         <td>{{maxStr($testimonial2->job, 20)}}</td>
                         <td>
@@ -108,9 +105,7 @@
               </tbody>
             </table>
           </div>
-          <!-- /.card-body -->
         </div>
-        <!-- /.card -->
       </div>
 </div>
 @endsection
