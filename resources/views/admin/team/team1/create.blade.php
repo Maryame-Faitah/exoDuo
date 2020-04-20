@@ -1,8 +1,8 @@
 @extends('adminlte::page')
 
 @section('content')
+    <h1 class="text-center">Créer</h1>
     <div class="container">
-        <h1 class="text-center">Créer</h1>
         <div class="col mt-5">
             <div class="card card-warning">
                 <div class="card-body">

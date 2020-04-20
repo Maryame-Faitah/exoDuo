@@ -10,7 +10,7 @@
           <div class="card-header">
             <h3 class="card-title">Section</h3>
           </div>
-          <!-- /.card-header -->
+         
           <div class="card-body table-responsive p-0" style="{{nbElem($testimonials)}}">
             <table class="table table-hover text-nowrap">
               <thead>
