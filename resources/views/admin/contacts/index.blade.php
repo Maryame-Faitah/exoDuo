@@ -16,8 +16,8 @@
           <table class="table table-hover text-nowrap">
             <thead>
               <tr>
-                <th>Titre de la Section</th>
-                <th>Description de la Section</th>
+                <th>Titre</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>

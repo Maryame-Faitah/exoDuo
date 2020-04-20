@@ -3,7 +3,7 @@
 <div class="container">
     <h1 class="text-center">Section Subscribe</h1>
     @if(count($subscribes) === 0)
-        <a href="{{route('subscribe.create')}}" class="btn btn-primary ml-2 mb-2">Créer</a>
+        <a href="{{route('subscribe.create')}}" class="btn btn-primary ml-2 pb-2 mb-2">Créer</a>
     @endif
     <div class="col-12">
         <div class="card">

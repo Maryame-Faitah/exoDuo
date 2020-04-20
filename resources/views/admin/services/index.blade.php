@@ -3,7 +3,7 @@
 <div class="container">
     <h1 class="text-center">Section Services</h1>
     @if(count($services) === 0)
-        <a href="{{route('services1.create')}}" class="btn btn-primary ml-2 mb-2">Créer</a>
+      <a href="{{route('services1.create')}}" class="btn btn-primary ml-2 pb-2 mb-2">Créer</a>
     @endif
     <div class="col-12 mb-5 pb-5">
         <div class="card">
@@ -15,8 +15,8 @@
             <table class="table table-hover text-nowrap">
               <thead>
                 <tr>
-                  <th>Titre de la Section</th>
-                  <th>Description de la Section</th>
+                  <th>Titre</th>
+                  <th>Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -44,7 +44,7 @@
         <!-- /.card -->
       </div>
 
-        <a href="{{route('services2.create')}}" class="btn btn-primary ml-2 mb-2">Créer</a>
+        <a href="{{route('services2.create')}}" class="btn btn-primary ml-2 pb-2 mb-2">Créer</a>
 
     <div class="col-12">
         <div class="card">
@@ -56,9 +56,9 @@
             <table class="table table-hover text-nowrap">
               <thead>
                 <tr>
-                  <th>Icon du Service</th>
-                  <th>Titre du Service</th>
-                  <th>Description du Service</th>
+                  <th>Icon</th>
+                  <th>Titre</th>
+                  <th>Description</th>
                 </tr>
               </thead>
               <tbody>

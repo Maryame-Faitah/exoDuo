@@ -6,9 +6,12 @@
         @if (count($teams1) === 0)
             <a href="{{route('team1.create')}}" class="btn btn-primary mb-2">Créer</a>
         @endif
-        <div class="row my-5 pb-5">
+        <div class="row pb-5">
             <div class="col-12">
             <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Section</h3>
+                </div>
                 <div class="card-body table-responsive p-0" style="{{nbElem($teams1)}}">
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
@@ -45,6 +48,9 @@
         <div class="row">
             <div class="col-12">
             <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Team</h3>
+                </div>
                 <div class="card-body table-responsive p-0" style="{{nbElem($teams)}}">
                 <table class="table table-head-fixed text-nowrap">
                     <thead>

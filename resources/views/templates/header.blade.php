@@ -1,6 +1,6 @@
 <div id="preloader"></div>
 @if (count($headers) !== 0)
-  <section id="hero" style="background:url('{{asset('storage/'.$headers[0]->img_path)}}') top center;">
+  <section id="hero" style="background:url('{{asset('storage/'.$headers[0]->img_path)}}') top center no-repeat; background-size: cover;">
 @else
   <section id="hero" style="background:url('{{asset('img/hero-bg.jpg')}}') top center;">
 @endif
@@ -36,8 +36,8 @@
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#contact">Contact Us</a></li>
+        <li><a href="/admin">Admin</a></li>
       </ul>
     </nav>
-    <!-- #nav-menu-container -->
   </div>
 </header>

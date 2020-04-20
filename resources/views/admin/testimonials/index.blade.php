@@ -15,8 +15,8 @@
             <table class="table table-hover text-nowrap">
               <thead>
                 <tr>
-                  <th>Titre de la Section</th>
-                  <th>Description de la Section</th>
+                  <th>Titre</th>
+                  <th>Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -43,7 +43,7 @@
         <!-- /.card -->
       </div>
 
-        <a href="{{route('testimonials2.create')}}" class="btn btn-primary ml-2 mb-3">Créer</a>
+        <a href="{{route('testimonials2.create')}}" class="btn btn-primary ml-2 mb-2">Créer</a>
 
     <div class="col-12">
         <div class="card">
@@ -57,14 +57,14 @@
                 <tr>
                   <th>Image</th>
                   <th>Nom</th>
-                  <th>Job</th>
+                  <th>Fonction</th>
                   <th>Description</th>
                 </tr>
               </thead>
               <tbody>
                   @foreach ($testimonials2 as $testimonial2)
                       <tr>
-                        <td class="text-center"><img src="{{asset('storage/'.$testimonial2->img_path)}}" class="w-100 rounded-circle" alt=""></td>
+                        <td class="text-center"><img src="{{asset('storage/'.$testimonial2->img_path)}}" class="w-50 rounded-circle" alt=""></td>
                         <td>{{maxStr($testimonial2->name, 15)}}</td>
                         <td>{{maxStr($testimonial2->job, 20)}}</td>
                         <td>
@@ -84,9 +84,7 @@
               </tbody>
             </table>
           </div>
-          <!-- /.card-body -->
         </div>
-        <!-- /.card -->
       </div>
 </div>
 @endsection
