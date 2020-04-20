@@ -10,23 +10,12 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Section</h3>
-  
-          <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
-              <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-  
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-              </div>
-            </div>
-          </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0">
+        <div class="card-body table-responsive p-0" style="{{nbElem($contactSections)}}">
           <table class="table table-hover text-nowrap">
             <thead>
               <tr>
-                <th>ID</th>
                 <th>Titre de la Section</th>
                 <th>Description de la Section</th>
               </tr>
@@ -34,10 +23,9 @@
             <tbody>
                 @foreach ($contactSections as $contactSection)
                     <tr>
-                      <td>{{$contactSection->id}}</td>
                       <td>{{maxStr($contactSection->title, 15)}}</td>
                       <td>{{maxStr($contactSection->description, 20)}}</td>
-                      <td>
+                      <td  class="text-right">
                           <form action="{{route('contactSection.destroy', $contactSection->id)}}" method="POST" enctype="multipart/form-data">
                                   @csrf
                                   @method('delete')
@@ -63,23 +51,12 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">Address Admin</h3>
-    
-            <div class="card-tools">
-              <div class="input-group input-group-sm" style="width: 150px;">
-                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-    
-                <div class="input-group-append">
-                  <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                </div>
-              </div>
-            </div>
           </div>
           <!-- /.card-header -->
-          <div class="card-body table-responsive p-0">
+          <div class="card-body table-responsive p-0" style="{{nbElem($contactAdmins)}}">
             <table class="table table-hover text-nowrap">
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th class="text-center">Icon/Address</th>
                   <th class="text-center">Icon/Email</th>
                   <th class="text-center">Icon/Phone</th>
@@ -88,8 +65,6 @@
               <tbody>
                   @foreach ($contactAdmins as $contactAdmin)
                       <tr>
-                        <td>{{$contactAdmin->id}}</td>
-
                         <td>
                           <div class="d-flex flex-column align-items-center">
                             <i class="{{$contactAdmin->iconAdress}} mb-1"></i>
@@ -107,7 +82,7 @@
                             <i class="{{$contactAdmin->iconPhone}} mb-1"></i>
                             {{maxStr($contactAdmin->phone, 10)}}
                         </td>
-                        <td>
+                        <td class="text-right">
                             <form action="{{route('contactAdmin.destroy', $contactAdmin->id)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('delete')
@@ -157,7 +132,7 @@
                 <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
               </div>
               <!-- /.btn-group -->
-              <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+              <a href="{{route('contactAdmin.index')}}" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></a>
               <div class="float-right">
                 @if (count($contactUsers) === 0)
                   0-{{count($contactUsers)}}/{{count($contactUsers)}}
@@ -175,30 +150,36 @@
             <div class="table-responsive mailbox-messages">
               <table class="table table-hover table-striped">
                 <tbody>
-                  @foreach ($contactUsers as $index => $contactUser)
+                  @if (count($contactUsers) !== 0)
+                    @foreach ($contactUsers as $index => $contactUser)
+                      <tr>
+                        <td>
+                          <div class="icheck-primary">
+                            <input type="checkbox" value="" id="check1">
+                            <label for="check1"></label>
+                          </div>
+                        </td>
+                        <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                        <td class="mailbox-name"><a href="{{route('contactUser.show', $contactUser->id)}}">{{maxStr($contactUser->name, 10)}}</a></td>
+                        <td class="mailbox-subject"><b>{{$contactUser->subject}}</b> - {{maxStr($contactUser->message, 25)}}
+                        </td>
+                        <td class="mailbox-attachment"></td>
+                        <td class="mailbox-date">5 mins ago</td>
+                        <td >
+                          <form action="{{route('contactUser.destroy', $contactUser->id)}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                          </form>
+                        </td>
+                      </tr>
+                    @endforeach
+                  @else
                     <tr>
-                      <td>
-                        <div class="icheck-primary">
-                          <input type="checkbox" value="" id="check1">
-                          <label for="check1"></label>
-                        </div>
-                      </td>
-                      <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                      <td class="mailbox-name"><a href="{{route('contactUser.show', $contactUser->id)}}">{{maxStr($contactUser->name, 10)}}</a></td>
-                      <td class="mailbox-subject"><b>{{$contactUser->subject}}</b> - {{maxStr($contactUser->message, 25)}}
-                      </td>
-                      <td class="mailbox-attachment"></td>
-                      <td class="mailbox-date">5 mins ago</td>
-                      <td >
-                        <form action="{{route('contactUser.destroy', $contactUser->id)}}" method="POST" enctype="multipart/form-data">
-                          @csrf
-                          @method('delete')
-                          <button type="submit" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                        </form>
-                      </td>
+                      <td class="mailbox-name"> Vous n'avez pas de messages</td>
                     </tr>
-                  @endforeach
-               
+                  @endif
+              
                 </tbody>
               </table>
               <!-- /.table -->
@@ -217,7 +198,7 @@
                 <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
               </div>
               <!-- /.btn-group -->
-              <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+              <a href="{{route('contactAdmin.index')}}" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></a>
               <div class="float-right">
                 @if (count($contactUsers) === 0)
                   0-{{count($contactUsers)}}/{{count($contactUsers)}}

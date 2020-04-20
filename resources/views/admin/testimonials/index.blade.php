@@ -3,29 +3,18 @@
 <div class="container">
     <h1 class="text-center">Section Testimonials</h1>
     @if(count($testimonials) === 0)
-        <a href="{{route('testimonials1.create')}}" class="btn btn-primary ml-2 mb-3">Créer</a>
+        <a href="{{route('testimonials1.create')}}" class="btn btn-primary ml-2 mb-2">Créer</a>
     @endif
     <div class="col-12 mb-5 pb-5">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Responsive Hover Table</h3>
-    
-            <div class="card-tools">
-              <div class="input-group input-group-sm" style="width: 150px;">
-                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-    
-                <div class="input-group-append">
-                  <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                </div>
-              </div>
-            </div>
+            <h3 class="card-title">Section</h3>
           </div>
           <!-- /.card-header -->
-          <div class="card-body table-responsive p-0">
+          <div class="card-body table-responsive p-0" style="{{nbElem($testimonials)}}">
             <table class="table table-hover text-nowrap">
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th>Titre de la Section</th>
                   <th>Description de la Section</th>
                 </tr>
@@ -33,14 +22,13 @@
               <tbody>
                 @foreach ($testimonials as $testimonial)
                   <tr>
-                      <td>{{$testimonial->id}}</td>
                       <td>{{maxStr($testimonial->section_title, 20)}}</td>
                       <td>{{maxStr($testimonial->section_description, 20)}}
                       </td>
-                      <td>
+                      <td class="text-right">
                           <form action="{{route('testimonials1.destroy', $testimonial->id)}}" method="POST" enctype="multipart/form-data">
                                   @csrf
-                                  @method('Supprimer')
+                                  @method('delete')
                                   <a href="{{route('testimonials1.edit', $testimonial->id)}}" class="btn btn-primary">Modifier</a>
                                   <button type="submit" class="btn btn-danger">Supprimer</button>
                           </form>
@@ -60,24 +48,13 @@
     <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Responsive Hover Table</h3>
-    
-            <div class="card-tools">
-              <div class="input-group input-group-sm" style="width: 150px;">
-                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-    
-                <div class="input-group-append">
-                  <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                </div>
-              </div>
-            </div>
+            <h3 class="card-title">Testimonials</h3>
           </div>
           <!-- /.card-header -->
-          <div class="card-body table-responsive p-0">
+          <div class="card-body table-responsive p-0" style="{{nbElem($testimonials2)}}">
             <table class="table table-hover text-nowrap">
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th>Image</th>
                   <th>Nom</th>
                   <th>Job</th>
@@ -87,14 +64,13 @@
               <tbody>
                   @foreach ($testimonials2 as $testimonial2)
                       <tr>
-                        <td>{{$testimonial2->id}}</td>
                         <td class="text-center"><img src="{{asset('storage/'.$testimonial2->img_path)}}" class="w-100 rounded-circle" alt=""></td>
                         <td>{{maxStr($testimonial2->name, 15)}}</td>
                         <td>{{maxStr($testimonial2->job, 20)}}</td>
                         <td>
                           {{maxStr($testimonial2->description, 20)}}
                         </td>
-                        <td>
+                        <td class="text-right">
                             <form action="{{route('testimonials2.destroy', $testimonial2->id)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('delete')

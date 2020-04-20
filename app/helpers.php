@@ -14,4 +14,12 @@ function nbPosts($variable){
     };
 };
 
+function nbElem ($variable){
+    if (count($variable) < 2) {
+        return '';
+    } else {
+        return 'height: 300px;';
+    };
+};
+
 ?>

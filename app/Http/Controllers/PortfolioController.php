@@ -89,10 +89,9 @@ class PortfolioController extends Controller
         if (request('img_path') !== null) {
             Storage::delete($portfolio->img_path);
             $portfolio->img_path = request('img_path')->store('img_path');
-
-            $portfolio->img_titre = request('img_titre');
-            $portfolio->img_description = request('img_description');
         }
+        $portfolio->img_titre = request('img_titre');
+        $portfolio->img_description = request('img_description');
 
         $portfolio->save();
 

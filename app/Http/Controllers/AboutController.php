@@ -88,7 +88,7 @@ class AboutController extends Controller
     {
         $about = About::find($id);
 
-        if (request('image') != null) {
+        if (request('image') !== null) {
             Storage::delete($about->img_path);
             $about->img_path = request('image')->store('image');
         }

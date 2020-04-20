@@ -10,7 +10,7 @@
         <div class="row my-5">
             <div class="col-12">
             <div class="card">
-                <div class="card-body table-responsive p-0" style="height: 300px;">
+                <div class="card-body table-responsive p-0" style="{{nbElem($headers)}}">
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
                     <tr>
